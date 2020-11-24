@@ -27,7 +27,7 @@
             @Html.DisplayNameFor(model => model.IdKondisiNavigation)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.IdKondisiNavigation.Kondisi)
+            @Html.DisplayFor(model => model.IdKondisiNavigation.IdKondisi)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.IdPeminjamanNavigation)
@@ -36,7 +36,7 @@
             @Html.DisplayFor(model => model.IdPeminjamanNavigation.IdPeminjaman)
         </dd>
     </dl>
-    
+
     <form asp-action="Delete">
         <input type="hidden" asp-for="IdPengembalian" />
         <input type="submit" value="Delete" class="btn btn-default" /> |

@@ -156,7 +156,7 @@ namespace RentalKendaraan_076.Models
 
                 entity.Property(e => e.IdPeminjaman).HasColumnName("ID_Peminjaman");
 
-                entity.Property(e => e.IdCostumer).HasColumnName("ID_Costumer");
+                entity.Property(e => e.IdCustomer).HasColumnName("ID_Costumer");
 
                 entity.Property(e => e.IdJaminan).HasColumnName("ID_Jaminan");
 
@@ -168,12 +168,12 @@ namespace RentalKendaraan_076.Models
 
                 entity.HasOne(d => d.IdCostumerNavigation)
                     .WithMany(p => p.Peminjaman)
-                    .HasForeignKey(d => d.IdCostumer)
+                    .HasForeignKey(d => d.IdCustomer)
                     .HasConstraintName("FK_Peminjaman_Customer");
 
-                entity.HasOne(d => d.IdCostumer1)
+                entity.HasOne(d => d.IdkendaraanNavigation)
                     .WithMany(p => p.Peminjaman)
-                    .HasForeignKey(d => d.IdCostumer)
+                    .HasForeignKey(d => d.IdCustomer)
                     .HasConstraintName("FK_Peminjaman_Kendaraan");
 
                 entity.HasOne(d => d.IdJaminanNavigation)

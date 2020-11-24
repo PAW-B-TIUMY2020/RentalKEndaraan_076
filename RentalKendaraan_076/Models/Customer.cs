@@ -17,8 +17,10 @@ namespace RentalKendaraan_076.Models
         public string Nik { get; set; }
         [Required(ErrorMessage = "Alamat wajib diisi!")]
         public string Alamat { get; set; }
-        [MinLength(10, ErrorMessage = "No Hp minimal 10 angka")]
-        [MaxLength(1, ErrorMessage = "No Hp minimal 13 angka")]
+        [Required(ErrorMessage = "No HP tidak boleh kosong")]
+        [RegularExpression("^[0-9]*$", ErrorMessage = "Hanya boleh diisi dengan angka")]
+        [MinLength(10, ErrorMessage = "No HP minimal 10 digit")]
+        [MaxLength(13, ErrorMessage = "No HP maksimal 13 digit")]
         public string NoHp { get; set; }
         [Required(ErrorMessage = "Gender wajib diisi!")]
         public int? IdGender { get; set; }
